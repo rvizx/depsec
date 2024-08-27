@@ -121,6 +121,10 @@ depcheck_scan(){
 }
 
 
+remove_files() {
+    rm -rf /tmp/depsec-report.html
+    rm -rf /tmp/depsec-report.zip
+}
 
 
 
@@ -222,6 +226,7 @@ case "$1" in
         composer_install
         depcheck_scan
         send_email
+        remove_files
         ;;
     
     --install)
