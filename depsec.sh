@@ -235,6 +235,7 @@ case "$1" in
         ;;
     
     --update)
+        install_prerequisites
         update_dependency_check
         ;;
 
