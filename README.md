@@ -109,20 +109,18 @@ The above command can be executed to scan the project folder. This will execute 
 
 If you want to change the `project-folder` that's need to scan, you can either execute the `--config` again (not recommended).  The following is the recommended way of reconfiguration. 
 
+- Upadte the `.env` file's `DEPSEC_PROJECT` config.
+
 ```bash
-nano ~/.bashrc 
+cd /path/to/depsec/
+nano .env 
 ```
 
 edit the line with `DEPSEC_PROJECT` and configure a new project folder 
 
 ```bash
-export DEPSEC_PROJECT="/opt/new-project"
+DEPSEC_PROJECT="/opt/new-project"
 ```
-
-```bash
-source ~/.bashrc
-```
-
 
 
 # Updating  
