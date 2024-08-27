@@ -168,6 +168,7 @@ install_dependency_check() {
     cd ~/.local/share/ 
     unzip depcheck.zip
     chmod +x ~/.local/share/dependency-check/bin/dependency-check.sh
+    rm -rf ~/.local/share/depcheck.zip
     echo "[depsec] installation complete!"
 }
 
@@ -186,6 +187,7 @@ update_dependency_check() {
     cd ~/.local/share/ 
     unzip depcheck.zip
     chmod +x ~/.local/share/dependency-check/bin/dependency-check.sh
+    rm -rf ~/.local/share/depcheck.zip
     echo "[depsec] update process is complete!"
 }
 
