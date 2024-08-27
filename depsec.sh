@@ -72,6 +72,7 @@ composer_install() {
 }
 
 
+# email sending function - this function uses mailtrap.io
 send_email() {
   boundary=$(date +%s | md5sum | awk '{print $1}')
   mailtrap_user="${MAILTRAP_USER}"
