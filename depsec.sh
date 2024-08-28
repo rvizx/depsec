@@ -134,23 +134,50 @@ install_prerequisites() {
     if [[ -f /etc/debian_version ]]; then
         echo "[depsec] detected debian-based os. installing packages..."
         sudo apt-get update -y
-        sudo apt-get install -y git wget unzip curl maven nodejs npm
+        sudo apt-get install -y git wget unzip curl maven nodejs npm php php-curl
         
         echo "[depsec] installation of common packages complete!"
 
         echo "[depsec] installing composer..."
-        curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+        curl -sS https://getcomposer.org/installer -o composer-setup.php
+        sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+        composer -v
 
         echo "[depsec] installing yarn..."
-        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-        echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-        sudo apt-get update -y
-        sudo apt-get install -y yarn
+        sudo npm install --global yarn
         
         echo "[depsec] all installations complete!"
 
     else
-        echo "[depsec] unsupported os. this script supports only debian-based distributions."
+        echo "[depsec] unsupported os. this script supports only debian-based distributions. (otherwise please do a manual installation of above packages)"
+        return 1
+    fi
+}
+
+
+
+# install pre-requisites - for debian based
+update_prerequisites() {
+    if [[ -f /etc/debian_version ]]; then
+        echo "[depsec] detected debian-based os. updating packages..."
+        sudo apt-get update
+        sudo apt-get upgrade -y git wget unzip curl maven nodejs npm php php-curl
+
+        echo "[depsec] installation of common packages complete!"
+
+        echo "[depsec] updating composer..."
+        sudo composer self-update
+        
+        echo "[depsec] updating npm"
+        sudo npm update --global
+
+        echo "[depsec] updating yarn..."
+        sudo npm update --global yarn
+        
+        echo "[depsec] all updates complete!"
+
+    else
+        echo "[depsec] unsupported os. this script supports only debian-based distributions. (otherwise please do a manual update of above packages)"
         return 1
     fi
 }
@@ -238,7 +265,7 @@ case "$1" in
         ;;
     
     --update)
-        install_prerequisites
+        update_prerequisites
         update_dependency_check
         ;;
 

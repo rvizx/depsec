@@ -35,7 +35,7 @@ You can execute the following to install the `depsec` on your system.
 ```bash 
 git clone https://github.com/rvizx/depsec
 cd depsec
-chmod +x depsec
+chmod +x depsec.sh
 ./depsec.sh --install 
 ```
 
