@@ -77,7 +77,7 @@ Note: `depsec` is expected to be executed on a `bash` environment. (Mainly becau
 ./depsec.sh --config
 ```
 
-the application will ask for you to above mentioned `api-key`s  it's format should be as follows 
+the application will ask for you to add above mentioned `api-key`s  it's format should be as follows 
 
 | NVD API Key                        | MAILTRAP API  Key                 |
 | ---------------------------------- | --------------------------------- |
