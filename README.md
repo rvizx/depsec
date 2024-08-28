@@ -2,13 +2,28 @@
 # DepSec - Automated Software Dependency Security Analysis Tool
 DepSec - Automated Software Dependency Security Analysis Tool (DependencyCheck Wrapper)
 
+<p align="center">
+  <img src="https://www.zyenra.com/img/depsec-logo.png?raw=true" alt="alt text" width="420" />
+</p>
 
-![alt text](https://www.zyenra.com/img/depsec-logo.png?raw=true)
 
+# Introduction
 
-# Credits 
+The DepSec project is a **Automated Software Dependency Security Analysis tool**, the tool's core functionality is completely based on the DependencyCheck project. The DepSec application contains additional features and also it's developed to automate the dependency security analysis process using `cron`s. 
+
+Main Functions and Features:
+- `DepSec` installation with `DependencyCheck`.
+- `DepSec` configuration file generation.
+- Automated dependency installation for the project. (`npm` , `yarn` and `composer`)
+- System packages and `DependencyCheck` Update.
+- Scan and generate a report using `DependencyCheck`.
+- Automatically email the report.
+- ..and more
+
+### Credits 
 
 This project is completely based on the `DependencyCheck` project and `depsec` is a simple wrapper over the `DependencyCheck` application to automate it's process and  it also include some additional features. 
+
 DependencyCheck : https://github.com/jeremylong/DependencyCheck
   
 
