@@ -64,7 +64,7 @@ composer_install() {
         exit 1
     fi
 
-    find "$project_dir" -type d -name 'node_modules' -prune -o -type f -name 'package.json' -print | while read -r pkg_file; do
+    find "$project_dir" -type d -name 'vendor' -prune -o -type f -name 'composer.json' -print | while read -r pkg_file; do
         pkg_dir=$(dirname "$pkg_file")
         echo "[depsec] running 'composer install --no-interaction --prefer-dist' in $pkg_dir"
         (cd "$pkg_dir" && composer install --no-interaction --prefer-dist)

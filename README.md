@@ -25,7 +25,12 @@ Main Functions and Features:
 This project is completely based on the `DependencyCheck` project and `depsec` is a simple wrapper over the `DependencyCheck` application to automate it's process and  it also include some additional features. 
 
 DependencyCheck : https://github.com/jeremylong/DependencyCheck
-  
+
+
+### Additional Notes and Contribution
+
+This project was originally developed for a specific purpose, but due to unforeseen circumstances, it is no longer required. As a result, I’m sharing it with the community in the hope that it proves useful. Contributions to this project are welcome and appreciated. Thank you for your support!
+
 
 
 # Installation 
