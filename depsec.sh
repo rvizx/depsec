@@ -252,7 +252,7 @@ uninstall() {
 case "$1" in
     --scan)
         npm_install
-        yarn_install
+        #yarn_install
         composer_install
         depcheck_scan
         send_email
